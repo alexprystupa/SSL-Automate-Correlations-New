@@ -8,15 +8,16 @@ This is accomplished using the Correlations.sh script. Addtionally, correlations
 ## Usage
 ### 1. Correlations.sh
 #### Step Inputs:
+* meta_folder: directory name of project (h5 files here, output will go here)
+* meta_field: meta data to correlate, ex. EGFR, KRAS
+* matching_field: Reference filed to use, cross check between original H5 and meta file
+* folds_pickle: Folds pkl file (Output of Step 4 HPL pipeline)
+* h5_complete_path: primary clustered h5 file
+* h5_additional_path: primary clustered h5 file
+* fold_number: Fold to use, ex. 1
+
 #### Step Outputs:
 #### Usage:
-#### Command Example:
-#### Scripts:
-
-### 2. Correlations-All-Meta-Columns.sh
-#### Step Inputs:
-#### Step Outputs:
-#### Command Example:
         python3 models/custom_correlations/main.py \
                 --meta_folder Julia_As_Training_Clustering_lung_lymph_node \
                 --meta_field $1 \
@@ -25,6 +26,13 @@ This is accomplished using the Correlations.sh script. Addtionally, correlations
                 --h5_complete_path /gpfs/data/naiklab/Alex/AI_Histopathology/Lung-Mutations/Histomorphological-Phenotype-Learning/results/BarlowTwins_3/Julia_External_Cohort_20X/h224_w224_n3_zdim128/hdf5_Julia_External_Cohort_20X_he_complete_labels_Matija_detail_small_bio_and_resections_lung_lymph_node_all_labels.h5 \
                 --h5_additional_path /gpfs/data/naiklab/Alex/AI_Histopathology/Lung-Mutations/Histomorphological-Phenotype-Learning/results/BarlowTwins_3/Julia_External_Cohort_20X/h224_w224_n3_zdim128/hdf5_TCGA_External_Cohort_40X_he_complete_all_labels.h5 \
                 --fold_number $2
+
+#### Scripts:
+
+### 2. Correlations-All-Meta-Columns.sh
+#### Step Inputs:
+#### Step Outputs:
+#### Command Example:
 
 ## Directory Structure
 ## H5 File Content Specification
